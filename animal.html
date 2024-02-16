@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Copied page</title>
+    </head>
+ 
+<body>
+    <h1>Animal game by Siddhartha Sangani</h1>
+    
+<h2>Guess The Animal </h2>
+
+<form>
+    <label for="form1_animalname">The hidden animal type</label>
+    <input type ="password" id="form1_animalname" name="form1_animalname" > <br>
+
+    <label for="form1_nick">Guess the animal </label>
+    <input type ="text" id="form1_guess" name="form1_guess" > <br>
+
+    <input type="button" onclick="checkAnimal()" value="Check the Guess">
+</form>
+<p id="demo"></p>
+<script>
+    var wrong=0;
+    var correct=0;
+    function checkAnimal()
+    {
+        var ele1 = document.getElementById("form1_animalname").value;
+        var ele2 = document.getElementById("form1_guess").value;
+        if(ele1==ele2)
+        {
+            correct=correct+1;
+            document.getElementById("demo").innerHTML = "Ruff ruff"+correct;
+        }
+        else
+        {
+            wrong+=1;
+            document.getElementById("demo").innerHTML = "Grrrr"+wrong;
+        }
+    }
+</script>
+
+
+</body>
+</html> 
