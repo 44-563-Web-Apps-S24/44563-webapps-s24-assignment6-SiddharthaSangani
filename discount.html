@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+ 
+<body>
+<h1>Siddhartha Sangani discount calculations</h1>
+<h2>Getting input</h2>
+<label for="price">Enter price per</label>
+<input type="number" name="price" id="price" value="10">
+<label for="items">Enter no of items</label>
+<input type="number" name="items" id="items" value="9">
+<label for="reductions">Enter the discount percent</label>
+<input type="number" name="reductions" id="reductions" value="5">
+<input type="button" onclick="discount()" value="Show total">
+<p id="result">Results</p>
+<form>
+    <label for="form1_age">What is your age </label>
+    <input type ="number" id="form1_age" name="form1_age" min=10 max=50 step=2 value=30> <br>
+
+    <label for="form1_nick">What is your nickname </label>
+    <input type ="text" id="form1_nick" name="form1_nick" autofocus> <br>
+
+    <input type="button" onclick="resolveForm()" value="Get values from form">
+</form>
+<form action="">
+    <input type="radio" id="sum" name="sum" onclick="chooseOp()">
+    <label for="sum">Sum</label>
+    <input type="radio" id="mult" name="mult" onclick="chooseOp()">
+    <label for="multiply">mult</label>
+    <input type="radio" id="exp" name="exp" onclick="chooseOp()">
+    <label for="exponent">exp</label>
+    <input type="radio" id="" name="" onclick="chooseOp()">
+</form>
+<p id="result1">Result</p>
+<script> 
+
+
+function discount()
+{
+    var price = document.getElementById("price").value
+    var number = document.getElementById("items").value
+    var discount = document.getElementById("reductions").value
+    var total,d;
+    var myOutput = "";
+    for (let index = 0; index < 5; index++) {
+        total= price*number;
+        d=(total*discount)/100;
+        total = total-d;
+        discount++;
+        document.getElementById("result").innerHTML =  "Total are: "+discount+"%"+"is"+total;
+        
+        
+    }
+}
+function chooseOp()
+{
+    var price = document.getElementById("price").value
+    var discount = document.getElementById("reductions").value
+    let addition = document.getElementById("sum");
+         if ( addition.checked ) {
+            var sum = price+discount;
+            document.getElementById("result1").innerHTML =  "sum is"+ sum;
+         } else {
+            text.innerHTML = "";
+         }
+    let multiply = document.getElementById("mult");
+         if ( multiply.checked ) {
+            var mult = price*discount;
+            document.getElementById("result1").innerHTML =  "mult is"+ mult;
+         } else {
+            text.innerHTML = "";
+         }
+    let checkbox = document.getElementById("exp");
+         if ( checkbox.checked ) {
+            var exp = price**discount;
+            document.getElementById("result1").innerHTML =  "exp is"+ sum;
+         } else {
+            text.innerHTML = "";
+         }
+}
+
+</script>
+
+</body>
+</html> 
