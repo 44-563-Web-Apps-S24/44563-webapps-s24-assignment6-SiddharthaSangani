@@ -63,6 +63,7 @@ function chooseOp()
 {
     
             var price = parseFloat(document.getElementById("price").value);
+            var number = document.getElementById("items").value
             var discount = parseFloat(document.getElementById("reductions").value);
             var operation = document.querySelector('input[name="operation"]:checked').value;
             var result;
@@ -92,8 +93,6 @@ function chooseOp()
             document.getElementById("result1").textContent = outputMessage;
         }
     
-
-
 </script>
 
 </body>
