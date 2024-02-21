@@ -2,6 +2,15 @@
 <html>
     <head>
         <title>Copied page</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" 
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" 
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+
     </head>
  
 <body>
@@ -16,13 +25,13 @@
     <label for="form1_nick">Guess the animal </label>
     <input type ="text" id="form1_guess" name="form1_guess" > <br>
 
-    <input type="button" onclick="checkAnimal()" value="Check the Guess">
+    <input type="button" class="btn btn-info" onclick="checkAnimal()" value="Check the Guess">
     
 </form>
 
 <p id="demo">Print result</p>
 <div>
-    <button type="button"><img src="appy.png" alt="appy" width="150" height="150" onclick="selectImage()" id="1stimg"></button>
+    <button type="button" class="btn btn-dark"><img src="appy.png" alt="appy" width="150" height="150" onclick="selectImage()" id="1stimg"></button>
 </div>
 
 
@@ -47,21 +56,25 @@
             document.getElementById("demo").innerHTML =  "Correct: "+correct+"wrong: "+wrong;
             alert("Grrrr");
         }
+        if(wrong>correct)
+        {
+            document.getElementById("demo").innerHTML =  "Sorry, too many wrong guesses.";
+        }
     }
     
 function selectImage()
     {
         switch (useImage) {
             case 1:
-                document.getElementById("1stimg").src="appy.png";
+                document.getElementById("1stimg").src="Gaseosa.png";
                 useImage=2;
                 break;
             case 2:
-                document.getElementById("1stimg").src = "Gaseosa.png";
+                document.getElementById("1stimg").src = "Nescafe.png";
                 useImage=3;
                 break;
             case 3:
-                 document.getElementById("1stimg").src = "Nescafe.png";   
+                 document.getElementById("1stimg").src = "Appy.png";   
                  useImage=1;
                 break;
         
@@ -73,4 +86,4 @@ function selectImage()
 
 
 </body>
-</html> 
+</html>     
